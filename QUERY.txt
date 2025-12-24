@@ -69,3 +69,18 @@ INNER JOIN Course c ON lc.courseId = c.courseId
 WHERE lc.lecturerId = @lecturer_id;
 
 --lecturerCourses(int lecturer_id)
+
+
+
+SELECT 
+    s.id, 
+    s.name, 
+    s.surname, 
+    s.email, 
+    s.gpa,
+    d.departmentName -- Öğrencinin bölümünü de görmek istersek
+FROM Student s
+INNER JOIN Department d ON s.departmentId = d.deptId
+WHERE s.supervisorId = @lecturer_id;
+
+--getSupervisees(int lecturer_id)
