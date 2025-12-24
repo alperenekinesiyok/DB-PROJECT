@@ -1,0 +1,17 @@
+SELECT 
+    s.id, 
+    s.name, 
+    s.surname, 
+    s.email, 
+    s.gpa, 
+    d.departmentName, 
+    CONCAT(l.name, ' ', l.surname) AS SupervisorName
+FROM Student s
+INNER JOIN Department d ON s.departmentId = d.deptId
+LEFT JOIN Lecturer l ON s.supervisorId = l.id
+WHERE s.id = @student_id; 
+
+--getStudentInfo(int student_id)
+
+
+
