@@ -45,3 +45,15 @@ WHERE s.id = @student_id;
 
 
 
+SELECT 
+    l.id, 
+    l.name, 
+    l.surname, 
+    l.email, 
+    l.phone, 
+    d.departmentName
+FROM Lecturer l
+INNER JOIN Department d ON l.departmentId = d.deptId
+WHERE l.id = @lecturer_id;
+
+--getLecturerInfo(int lecturer_id)
