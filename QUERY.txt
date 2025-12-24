@@ -15,3 +15,17 @@ WHERE s.id = @student_id;
 
 
 
+SELECT 
+    c.courseCode, 
+    c.courseName, 
+    c.credits, 
+    e.grade,
+    e.enrollmentDate
+FROM Enrollment e
+INNER JOIN Course c ON e.courseId = c.courseId
+WHERE e.studentId = @student_id;
+
+--studentCourses(int student_id)
+
+
+
