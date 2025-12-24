@@ -29,3 +29,19 @@ WHERE e.studentId = @student_id;
 
 
 
+SELECT 
+    l.id AS SupervisorID,
+    l.name, 
+    l.surname, 
+    l.email, 
+    l.phone,
+    d.departmentName
+FROM Student s
+INNER JOIN Lecturer l ON s.supervisorId = l.id
+INNER JOIN Department d ON l.departmentId = d.deptId
+WHERE s.id = @student_id;
+
+--getSupervisorInfo(int student_id)
+
+
+
